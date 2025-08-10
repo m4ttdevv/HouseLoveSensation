@@ -93,10 +93,11 @@
     }
     
     .carousel-caption {
-      bottom: 40px;
-      left: 50px;
+      bottom: 80px;
+      left: 15px;
       right: 10px;
-      padding: 25px;
+      padding: 15px;
+      flex-direction: column;
       display: flex;
       font-family: 'Playfair Display', serif;
       font-weight: 500;
@@ -114,7 +115,7 @@
       font-weight: 500;
     }
     .carousel-btn {
-      padding: 12px 10px;
+      padding: 8px 12px;
       background: #dc3545; /* Colore rosso richiesto */
       color: white;
       text-decoration: none;
@@ -122,7 +123,7 @@
       font-weight: 150;
       transition: all 0.3s ease;
       border: none;
-      font-size: 1rem;
+      font-size: 0.8rem;
       display: inline-block;
       box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); /* Ombra per distacco */
     }
@@ -152,17 +153,16 @@
   }
   
   /* Contenitore dei bottoni con più spazio */
-  .carousel-buttons {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    right: 20px;
-    display: flex;
-    gap: 40px; /* Maggiore distanza tra i bottoni */
-    z-index: 2;
-    justify-content: center; /* Centra i bottoni */
-  }
+  /* Container dei bottoni */
+.carousel-buttons {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
   
+}
 
   /* Se vuoi differenziare i due bottoni */
   .carousel-btn.btn-1 {
