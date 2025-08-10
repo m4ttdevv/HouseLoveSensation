@@ -11,9 +11,13 @@
 
 .brand{
 font-size: 25px;
+flex: 1;
 }
-
-
+@media (max-width: 480px) {
+    .brand {
+      font-size: 20px;
+    }
+  }
 
 
 .navbar {
