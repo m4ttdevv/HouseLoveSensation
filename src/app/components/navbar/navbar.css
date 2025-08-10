@@ -1,0 +1,126 @@
+.img-fluid{
+    width: 70px;
+    height: 70px;
+}
+
+.House{
+    font-size: 22px;
+}
+
+.Sensation{
+    color: #dc3545;
+    font-size: 22px;
+}
+
+.Love{
+    font-size: 22px;
+}
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    text-decoration: none;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    width: auto;
+    display: flex;
+}
+
+/* Stili per i link di navigazione */
+.navbar-nav {
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    color: #dc3545 !important; /* Colore rosso */
+    font-weight: 500;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    background-color: #dc3545;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    background-color: #dc3545;
+}
+
+/* Menu hamburger personalizzato */
+.navbar-toggler {
+    border: 2px solid #dc3545;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23dc3545' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Responsive - Mobile */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 0;
+        border-radius: 8px;
+    }
+}
+
+/* Animazione per il collasso */
+.navbar-collapse {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Container responsive */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

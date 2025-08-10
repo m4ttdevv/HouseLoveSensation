@@ -1,0 +1,213 @@
+
+/* Carousel container positioning */
+.hero-section {
+  background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
+  padding: 40px 0;
+  min-height: 100vh;
+}
+#carouselExampleCaptions {
+    margin-top: 80px; /* Adjust based on your navbar height */
+    margin-bottom: 40px;
+    max-width: 800px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  
+  /* Center the carousel image */
+  .carousel-inner {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carousel-item img {
+    width: 100% !important;
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7)
+  }
+  
+  /* Position text inside the image */
+  .carousel-caption {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    right: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    display: block !important; /* Override Bootstrap's d-none d-md-block */
+    z-index: 2;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+    color: #f8f9fa;
+
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+
+  .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    background-color: #6c757d;
+    border: none;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-indicators button.active {
+    background-color: #007bff;
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #carouselExampleCaptions {
+      margin-top: 50px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    
+    .carousel-item img {
+      height: 250px;
+    }
+    
+    .carousel-caption {
+      bottom: 40px;
+      left: 50px;
+      right: 10px;
+      padding: 25px;
+      display: flex;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+    
+    .carousel-caption h5 {
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+    
+    .carousel-caption p {
+      font-size: 0.9rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+    .carousel-btn {
+      padding: 12px 10px;
+      background: #dc3545; /* Colore rosso richiesto */
+      color: white;
+      text-decoration: none;
+      border-radius: 20px; /* Più arrotondati */
+      font-weight: 150;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); /* Ombra per distacco */
+    }
+
+  }
+
+  .carousel-btn {
+    padding: 12px 24px;
+    background: #dc3545; /* Colore rosso richiesto */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px; /* Più arrotondati */
+    font-weight: 150;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); /* Ombra per distacco */
+  }
+  
+  .carousel-btn:hover {
+    background: #c82333; /* Rosso più scuro al hover */
+    transform: translateY(-3px); /* Effetto di sollevamento */
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Contenitore dei bottoni con più spazio */
+  .carousel-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    gap: 40px; /* Maggiore distanza tra i bottoni */
+    z-index: 2;
+    justify-content: center; /* Centra i bottoni */
+  }
+  
+
+  /* Se vuoi differenziare i due bottoni */
+  .carousel-btn.btn-1 {
+    background: #dc3545;
+  }
+  
+  .carousel-btn.btn-1:hover {
+    background: #c82333;
+  }
+  
+  .carousel-btn.btn-2 {
+    background: #dc3545;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordo per differenziare */
+  }
+  
+  .carousel-btn.btn-2:hover {
+    background: #c82333;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+.card-row{
+  padding: 35px;
+
+}
+.card-text{
+  font-size: 17px;
+
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+
+}
+h5{
+  color: #d53242;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.text-color{
+  color: black;
+}
+
+
+.foot{
+  background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
+  padding: 15px;
+  text-align: center;
+  
+}
