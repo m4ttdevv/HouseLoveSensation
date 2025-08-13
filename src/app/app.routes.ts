@@ -5,7 +5,6 @@ import { About } from './components/about/about';
 import { Contact } from './components/contact/contact';
 import { Services } from './components/services/services';
 import { PrivacyPolicy } from './components/privacy-policy/privacy-policy';
-import { NoteLegali } from './components/note-legali/note-legali';
 
 export const routes: Routes = [
     {path: '',redirectTo: '/home', pathMatch: 'full'}, //rotta default
@@ -14,7 +13,6 @@ export const routes: Routes = [
     {path: 'services', component: Services},
     {path: 'contact', component: Contact},
     {path: 'privacy-policy', component: PrivacyPolicy},
-    {path: 'note-legali', component: NoteLegali},
     {path: '**', redirectTo: '/home'} 
 
 ];  
