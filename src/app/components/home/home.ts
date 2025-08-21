@@ -13,6 +13,7 @@ export class Home implements OnInit {
   constructor(private searchServiceBar: SearchServiceBar) {}
 
   ngOnInit(): void {
+    //aggiorna/sovrascrive il contenuto della pagina "Home" (questo vale per tutte le altre cambia solo la pagina) è personalizzabile, ogni componente può definire i propri contenuti di ricerca
     this.searchServiceBar.addPageContent({
       route: '/home',
       title: 'Home',
@@ -22,7 +23,7 @@ export class Home implements OnInit {
           content: 'Homepage di presentazione',
           keywords: ['home', 'benvenuti', 'house', 'sensation', 'festa']
         }
-        // Aggiungi altre sezioni...
+        
       ]
     });
   }

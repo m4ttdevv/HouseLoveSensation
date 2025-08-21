@@ -3,30 +3,32 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
-
+//rappresenta un singolo risultato di ricerca
 export interface SearchResult {
-  title: string;
-  content: string;
-  route: string;
-  section?: string;
+  title: string; //titolo pagina
+  content: string; //contenuto della sezione
+  route: string; //percorso di nagivazione
+  section?: string; //nome della sezione
 }
 
+//definisce la struttura di una pagina con le sue sezioni
 export interface PageContent {
-  route: string;
-  title: string;
-  sections: {
-    title: string;
-    content: string;
-    keywords: string[];
+  route: string; //percorso della pagina
+  title: string; //titolo pagina
+  sections: { //array delle sezioni
+    title: string; //titolo sezione
+    content: string; //contenuto della sezione
+    keywords: string[]; //parola chiave per la ricerca
   }[];
 }
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SearchServiceBar {
-  private searchResults = new BehaviorSubject<SearchResult[]>([]);
-  private searchQuery = new BehaviorSubject<string>('');
+  private searchResults = new BehaviorSubject<SearchResult[]>([]); //Stream dei risultati di ricerca
+  private searchQuery = new BehaviorSubject<string>(''); //stream della query di ricerca corrente
 
   // Database delle pagine e dei loro contenuti
   private pagesContent: PageContent[] = [
@@ -84,11 +86,11 @@ export class SearchServiceBar {
   constructor(private router: Router) {}
 
   // Metodo per eseguire la ricerca
-  search(query: string): SearchResult[] {
-    if (!query || query.trim().length < 2) {
+  search(query: string): SearchResult[] { //esegue la ricerca attraverso tutte le pagine
+    if (!query || query.trim().length < 2) { //Algoritmo di ricerca, ignora le query vuote con o meno di due caratteri
       return [];
     }
-
+    //cerca in tre aree per ogni sezione
     const searchTerm = query.toLowerCase().trim();
     const results: SearchResult[] = [];
 
@@ -104,7 +106,7 @@ export class SearchServiceBar {
 
         // Cerca nel titolo
         const titleMatch = section.title.toLowerCase().includes(searchTerm);
-
+            //restituisce tutti i risultati se soddisfa almeno un criterio e ritorna array di SearchResult (sotto)
         if (keywordMatch || contentMatch || titleMatch) {
           results.push({
             title: page.title,
@@ -122,31 +124,31 @@ export class SearchServiceBar {
 
   // Observable per i risultati di ricerca
   getSearchResults(): Observable<SearchResult[]> {
-    return this.searchResults.asObservable();
+    return this.searchResults.asObservable(); //restituisce un observable per monitorare i cambiamenti nei risultati di ricerca
   }
 
   // Observable per la query di ricerca
   getSearchQuery(): Observable<string> {
-    return this.searchQuery.asObservable();
+    return this.searchQuery.asObservable(); //restituisce un observable per monitorare la query di ricerca corrente
   }
 
-  // Aggiorna la query di ricerca
+  // Aggiorna la query di ricerca corrente nell'observable stream
   updateSearchQuery(query: string): void {
     this.searchQuery.next(query);
   }
 
-  // Naviga verso una pagina specifica
+  // Naviga verso una pagina specifica usando angular router
   navigateToResult(route: string): void {
     this.router.navigate([route]);
   }
 
-  // Metodo per aggiungere contenuti di nuove pagine
+  // Metodo per aggiungere contenuti di nuove pagine, se esiste già nello stesso route la sovrascrive 
   addPageContent(pageContent: PageContent): void {
     const existingIndex = this.pagesContent.findIndex(page => page.route === pageContent.route);
     if (existingIndex !== -1) {
       this.pagesContent[existingIndex] = pageContent;
     } else {
-      this.pagesContent.push(pageContent);
+      this.pagesContent.push(pageContent); //altrimenti aggiunge una nuova pagina
     }
   }
 
