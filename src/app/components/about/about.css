@@ -12,74 +12,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
     pointer-events: none;
-}
-
-.about-hero-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.about-hero-particles .particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: float-particle 20s infinite ease-in-out;
-}
-
-.about-hero-particles .particle:nth-child(1) {
-    width: 100px;
-    height: 100px;
-    top: 15%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.about-hero-particles .particle:nth-child(2) {
-    width: 80px;
-    height: 80px;
-    top: 65%;
-    right: 15%;
-    animation-delay: 5s;
-}
-
-.about-hero-particles .particle:nth-child(3) {
-    width: 60px;
-    height: 60px;
-    top: 45%;
-    left: 75%;
-    animation-delay: 10s;
-}
-
-.about-hero-particles .particle:nth-child(4) {
-    width: 120px;
-    height: 120px;
-    top: 25%;
-    right: 20%;
-    animation-delay: 15s;
-}
-
-@keyframes float-particle {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.3;
-    }
-    33% {
-        transform: translate(40px, -40px) scale(1.1);
-        opacity: 0.5;
-    }
-    66% {
-        transform: translate(-30px, 30px) scale(0.9);
-        opacity: 0.4;
-    }
 }
 
 .about-hero .container {
@@ -106,21 +40,11 @@
     font-size: 0.95rem;
     margin-bottom: 2rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    animation: float-badge 3s ease-in-out infinite;
 }
 
 .hero-badge-about svg {
     width: 20px;
     height: 20px;
-}
-
-@keyframes float-badge {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
 }
 
 .about-hero-title {
@@ -244,22 +168,12 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3);
-    animation: pulse-heart 2s ease-in-out infinite;
 }
 
 .motto-icon svg {
     width: 40px;
     height: 40px;
     color: white;
-}
-
-@keyframes pulse-heart {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.08);
-    }
 }
 
 .motto-text {
@@ -282,11 +196,7 @@
 /* === TEAM SECTION === */
 .team-section {
     padding: 8rem 0;
-    background: linear-gradient(135deg, 
-        #ffeef8 0%, 
-        #e8f0fe 30%,
-        #f3e8ff 60%, 
-        #fff0f6 100%);
+    background: linear-gradient(135deg, #ffeef8 0%, #e8f0fe 30%, #f3e8ff 60%, #fff0f6 100%);
     position: relative;
     overflow: hidden;
 }
@@ -298,9 +208,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(147, 197, 253, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(240, 147, 251, 0.15) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 30%, rgba(147, 197, 253, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(240, 147, 251, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -325,7 +233,6 @@
     border-radius: 2px;
 }
 
-/* === TEAM GRID === */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -444,9 +351,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
