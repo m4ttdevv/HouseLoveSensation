@@ -2,214 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom utility classes per glassmorphism */
+/* Import del font Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @layer components {
-  /* Hero Section */
+  /* Hero Section con Gradient */
   .hero-section {
     @apply relative py-10 min-h-[40vh];
     background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
   }
 
   .hero-section::before {
-    @apply content-[''] absolute inset-0 pointer-events-none;
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
     background: rgba(255, 255, 255, 0.05);
   }
 
-  /* Carousel Container */
-  #carouselExampleCaptions {
-    @apply mt-20 mb-10 max-w-[800px] mx-auto relative;
-  }
-
-  /* Glassmorphism Carousel Inner */
-  .carousel-inner {
-    @apply rounded-[20px] overflow-hidden border border-white/20;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    box-shadow: 
-      0 8px 32px 0 rgba(31, 38, 135, 0.37),
-      0 0 0 1px rgba(255, 255, 255, 0.18);
-  }
-
-  .carousel-item img {
-    @apply w-full h-[300px] object-cover object-center brightness-[0.7];
-  }
-
-  /* Glassmorphism Caption */
-  .carousel-caption {
-    @apply absolute bottom-[50px] left-[50px] right-[150px] rounded-2xl p-5 text-left text-white z-[2] border border-white/20;
-    display: block !important;
+  /* Glassmorphism per Caption */
+  .glass-caption {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   }
 
-  .carousel-caption h5 {
-    @apply text-2xl font-medium mb-2.5 text-white;
-    font-family: 'Playfair Display', serif;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .carousel-caption p {
-    @apply text-base mb-0 leading-[1.4] text-gray-100;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Carousel Indicators */
-  .carousel-indicators button {
-    @apply w-3 h-3 rounded-full mx-1.5 border border-white/40 opacity-60 transition-all duration-300;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  }
-
-  .carousel-indicators button.active {
-    @apply opacity-100 scale-110;
-    background: rgba(0, 123, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
-  }
-
-  /* Carousel Buttons with Glassmorphism */
-  .carousel-btn {
-    @apply inline-block px-6 py-3 text-white no-underline rounded-[20px] text-base border border-white/20 transition-all duration-300;
+  /* Glassmorphism per Bottoni */
+  .glass-button {
     background: rgba(220, 53, 69, 0.9);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    font-weight: 150;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 
       0 4px 15px rgba(220, 53, 69, 0.3),
       0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 
-  .carousel-btn:hover {
-    @apply -translate-y-1 text-white no-underline border-white/30;
+  .glass-button:hover {
     background: rgba(200, 35, 51, 0.95);
+    box-shadow: 
+      0 6px 20px rgba(220, 53, 69, 0.4),
+      0 0 20px rgba(220, 53, 69, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-button-secondary {
+    background: rgba(220, 53, 69, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+  }
+
+  .glass-button-secondary:hover {
+    background: rgba(200, 35, 51, 0.95);
+    border-color: rgba(255, 255, 255, 0.5);
     box-shadow: 
       0 6px 20px rgba(220, 53, 69, 0.4),
       0 0 20px rgba(220, 53, 69, 0.3);
   }
 
-  .carousel-buttons {
-    @apply absolute bottom-[15px] left-[15px] right-[15px] flex gap-2.5;
-  }
-
-  .carousel-btn.btn-1 {
-    background: rgba(220, 53, 69, 0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  .carousel-btn.btn-1:hover {
-    background: rgba(200, 35, 51, 0.95);
-  }
-
-  .carousel-btn.btn-2 {
-    @apply border-white/30;
-    background: rgba(220, 53, 69, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  .carousel-btn.btn-2:hover {
-    @apply border-white/50;
-    background: rgba(200, 35, 51, 0.95);
-  }
-
-  /* Cards with Glassmorphism */
-  .card-row {
-    @apply p-[35px];
-  }
-
-  .card {
-    @apply rounded-2xl border border-white/30 transition-all duration-300;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  /* Shadow glass effect */
+  .shadow-glass {
     box-shadow: 
-      0 8px 32px 0 rgba(31, 38, 135, 0.15),
-      0 0 0 1px rgba(255, 255, 255, 0.1);
+      0 8px 32px 0 rgba(31, 38, 135, 0.37),
+      0 0 0 1px rgba(255, 255, 255, 0.18);
   }
 
-  .card:hover {
-    @apply -translate-y-1;
-    box-shadow: 
-      0 12px 40px 0 rgba(31, 38, 135, 0.25),
-      0 0 0 1px rgba(255, 255, 255, 0.2);
-  }
-
-  .card-text {
-    @apply text-[17px];
+  /* Font Playfair Display */
+  .playfair-font {
     font-family: 'Playfair Display', serif;
-    font-weight: 500;
   }
 
-  h5 {
-    @apply text-[#d53242];
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
+  /* Text shadows per leggibilità */
+  .drop-shadow-text {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 
-  .text-color {
-    @apply text-black;
+  .drop-shadow-text-sm {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
-  /* Footer with Glassmorphism */
+  /* Footer con Glassmorphism */
   .foot {
-    @apply relative p-[15px] text-center;
+    @apply relative py-4 text-center;
     background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
   }
 
   .foot::before {
-    @apply content-[''] absolute inset-0 pointer-events-none;
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
   }
 }
 
-/* Responsive Styles */
 @layer utilities {
-  @media (max-width: 768px) {
-    #carouselExampleCaptions {
-      @apply mt-[50px] mx-[15px];
-    }
-    
-    .carousel-item img {
-      @apply h-[250px];
-    }
-    
-    .carousel-caption {
-      @apply bottom-20 left-[15px] right-[10px] p-[15px] flex flex-col;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-    }
-    
-    .carousel-caption h5 {
-      @apply text-[1.2rem];
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-    }
-    
-    .carousel-caption p {
-      @apply text-[0.9rem];
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-    }
-    
-    .carousel-btn {
-      @apply px-3 py-2 text-[0.8rem];
-      background: rgba(220, 53, 69, 0.9);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      font-weight: 150;
-      box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
-    }
+  /* Utility per le card hover */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover:hover {
+    @apply transform -translate-y-2 shadow-2xl;
+  }
+}
+
+/* Animazioni personalizzate */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .playfair-font {
+    font-size: clamp(1rem, 4vw, 1.5rem);
   }
 }
