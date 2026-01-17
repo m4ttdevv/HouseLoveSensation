@@ -1,288 +1,215 @@
-/* Carousel container positioning */
-.hero-section {
-  background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
-  padding: 40px 0;
-  min-height: 40vh;
-  position: relative;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Effetto backdrop blur per modernità */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.05);
-  pointer-events: none;
-}
+/* Custom utility classes per glassmorphism */
+@layer components {
+  /* Hero Section */
+  .hero-section {
+    @apply relative py-10 min-h-[40vh];
+    background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
+  }
 
-#carouselExampleCaptions {
-  margin-top: 80px;
-  margin-bottom: 40px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
+  .hero-section::before {
+    @apply content-[''] absolute inset-0 pointer-events-none;
+    background: rgba(255, 255, 255, 0.05);
+  }
 
-/* Glassmorphism per il carousel */
-.carousel-inner {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 
-    0 8px 32px 0 rgba(31, 38, 135, 0.37),
-    0 0 0 1px rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.carousel-item img {
-  width: 100% !important;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.7);
-}
-
-/* Glassmorphism per il caption */
-.carousel-caption {
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  right: 150px;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: left;
-  color: rgb(255, 255, 255);
-  display: block !important;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-}
-
-.carousel-caption h5 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #ffffff;
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-caption p {
-  font-size: 1rem;
-  margin-bottom: 0;
-  line-height: 1.4;
-  color: #f8f9fa;
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Indicatori moderni con glassmorphism */
-.carousel-indicators button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 0 6px;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  opacity: 0.6;
-  transition: all 0.3s ease;
-}
-
-.carousel-indicators button.active {
-  background: rgba(0, 123, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  opacity: 1;
-  transform: scale(1.2);
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
-}
-
-/* Bottoni con glassmorphism */
-.carousel-btn {
-  padding: 12px 24px;
-  background: rgba(220, 53, 69, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: 150;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 1rem;
-  display: inline-block;
-  box-shadow: 
-    0 4px 15px rgba(220, 53, 69, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.carousel-btn:hover {
-  background: rgba(200, 35, 51, 0.95);
-  transform: translateY(-3px);
-  box-shadow: 
-    0 6px 20px rgba(220, 53, 69, 0.4),
-    0 0 20px rgba(220, 53, 69, 0.3);
-  color: white;
-  text-decoration: none;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Container dei bottoni */
-.carousel-buttons {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  right: 15px;
-  display: flex;
-  gap: 10px;
-}
-
-.carousel-btn.btn-1 {
-  background: rgba(220, 53, 69, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.carousel-btn.btn-1:hover {
-  background: rgba(200, 35, 51, 0.95);
-}
-
-.carousel-btn.btn-2 {
-  background: rgba(220, 53, 69, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.carousel-btn.btn-2:hover {
-  background: rgba(200, 35, 51, 0.95);
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-/* Cards con glassmorphism */
-.card-row {
-  padding: 35px;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 8px 32px 0 rgba(31, 38, 135, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 12px 40px 0 rgba(31, 38, 135, 0.25),
-    0 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.card-text {
-  font-size: 17px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-}
-
-h5 {
-  color: #d53242;
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-}
-
-.text-color {
-  color: black;
-}
-
-/* Footer con glassmorphism */
-.foot {
-  background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
-  padding: 15px;
-  text-align: center;
-  position: relative;
-}
-
-.foot::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  pointer-events: none;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+  /* Carousel Container */
   #carouselExampleCaptions {
-    margin-top: 50px;
-    margin-left: 15px;
-    margin-right: 15px;
+    @apply mt-20 mb-10 max-w-[800px] mx-auto relative;
   }
-  
+
+  /* Glassmorphism Carousel Inner */
+  .carousel-inner {
+    @apply rounded-[20px] overflow-hidden border border-white/20;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.37),
+      0 0 0 1px rgba(255, 255, 255, 0.18);
+  }
+
   .carousel-item img {
-    height: 250px;
+    @apply w-full h-[300px] object-cover object-center brightness-[0.7];
   }
-  
+
+  /* Glassmorphism Caption */
   .carousel-caption {
-    bottom: 80px;
-    left: 15px;
-    right: 10px;
-    padding: 15px;
-    flex-direction: column;
-    display: flex;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    @apply absolute bottom-[50px] left-[50px] right-[150px] rounded-2xl p-5 text-left text-white z-[2] border border-white/20;
+    display: block !important;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   }
-  
+
   .carousel-caption h5 {
-    font-size: 1.2rem;
+    @apply text-2xl font-medium mb-2.5 text-white;
     font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
-  
+
   .carousel-caption p {
-    font-size: 0.9rem;
+    @apply text-base mb-0 leading-[1.4] text-gray-100;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
-  
+
+  /* Carousel Indicators */
+  .carousel-indicators button {
+    @apply w-3 h-3 rounded-full mx-1.5 border border-white/40 opacity-60 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .carousel-indicators button.active {
+    @apply opacity-100 scale-110;
+    background: rgba(0, 123, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  }
+
+  /* Carousel Buttons with Glassmorphism */
   .carousel-btn {
-    padding: 8px 12px;
+    @apply inline-block px-6 py-3 text-white no-underline rounded-[20px] text-base border border-white/20 transition-all duration-300;
     background: rgba(220, 53, 69, 0.9);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
     font-weight: 150;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.8rem;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    box-shadow: 
+      0 4px 15px rgba(220, 53, 69, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .carousel-btn:hover {
+    @apply -translate-y-1 text-white no-underline border-white/30;
+    background: rgba(200, 35, 51, 0.95);
+    box-shadow: 
+      0 6px 20px rgba(220, 53, 69, 0.4),
+      0 0 20px rgba(220, 53, 69, 0.3);
+  }
+
+  .carousel-buttons {
+    @apply absolute bottom-[15px] left-[15px] right-[15px] flex gap-2.5;
+  }
+
+  .carousel-btn.btn-1 {
+    background: rgba(220, 53, 69, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .carousel-btn.btn-1:hover {
+    background: rgba(200, 35, 51, 0.95);
+  }
+
+  .carousel-btn.btn-2 {
+    @apply border-white/30;
+    background: rgba(220, 53, 69, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .carousel-btn.btn-2:hover {
+    @apply border-white/50;
+    background: rgba(200, 35, 51, 0.95);
+  }
+
+  /* Cards with Glassmorphism */
+  .card-row {
+    @apply p-[35px];
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/30 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .card:hover {
+    @apply -translate-y-1;
+    box-shadow: 
+      0 12px 40px 0 rgba(31, 38, 135, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .card-text {
+    @apply text-[17px];
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+
+  h5 {
+    @apply text-[#d53242];
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+
+  .text-color {
+    @apply text-black;
+  }
+
+  /* Footer with Glassmorphism */
+  .foot {
+    @apply relative p-[15px] text-center;
+    background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
+  }
+
+  .foot::before {
+    @apply content-[''] absolute inset-0 pointer-events-none;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+}
+
+/* Responsive Styles */
+@layer utilities {
+  @media (max-width: 768px) {
+    #carouselExampleCaptions {
+      @apply mt-[50px] mx-[15px];
+    }
+    
+    .carousel-item img {
+      @apply h-[250px];
+    }
+    
+    .carousel-caption {
+      @apply bottom-20 left-[15px] right-[10px] p-[15px] flex flex-col;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+    
+    .carousel-caption h5 {
+      @apply text-[1.2rem];
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+    
+    .carousel-caption p {
+      @apply text-[0.9rem];
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+    
+    .carousel-btn {
+      @apply px-3 py-2 text-[0.8rem];
+      background: rgba(220, 53, 69, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-weight: 150;
+      box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    }
   }
 }
