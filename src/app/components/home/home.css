@@ -1,160 +1,145 @@
-
 /* Carousel container positioning */
 .hero-section {
   background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
   padding: 40px 0;
   min-height: 40vh;
+  position: relative;
+}
+
+/* Effetto backdrop blur per modernità */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
 }
 
 #carouselExampleCaptions {
-    margin-top: 80px; /* Adjust based on your navbar height */
-    margin-bottom: 40px;
-    max-width: 800px; /* Adjust as needed */
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-  }
-  
-  /* Center the carousel image */
-  .carousel-inner {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .carousel-item img {
-    width: 100% !important;
-    height: 300px; /* Fixed height for consistency */
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(0.7)
-  }
-  
-  /* Position text inside the image */
-  .carousel-caption {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    right: 150px;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: left;
-    color: rgb(255, 255, 255);
-    display: block !important; /* Override Bootstrap's d-none d-md-block */
-    z-index: 2;
-  }
-  
-  .carousel-caption h5 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #ffffff;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
 
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-  }
-  
-  .carousel-caption p {
-    font-size: 1rem;
-    margin-bottom: 0;
-    line-height: 1.4;
-    color: #f8f9fa;
+/* Glassmorphism per il carousel */
+.carousel-inner {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    0 0 0 1px rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
 
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-  }
+.carousel-item img {
+  width: 100% !important;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7);
+}
 
-  .carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin: 0 6px;
-    background-color: #6c757d;
-    border: none;
-    opacity: 0.3;
-    transition: all 0.3s ease;
-  }
-  
-  .carousel-indicators button.active {
-    background-color: #007bff;
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    #carouselExampleCaptions {
-      margin-top: 50px;
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-    
-    .carousel-item img {
-      height: 250px;
-    }
-    
-    .carousel-caption {
-      bottom: 80px;
-      left: 15px;
-      right: 10px;
-      padding: 15px;
-      flex-direction: column;
-      display: flex;
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-    }
-    
-    .carousel-caption h5 {
-      font-size: 1.2rem;
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-    }
-    
-    .carousel-caption p {
-      font-size: 0.9rem;
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-    }
-    .carousel-btn {
-      padding: 8px 12px;
-      background: #dc3545; /* Colore rosso richiesto */
-      color: white;
-      text-decoration: none;
-      border-radius: 20px; /* Più arrotondati */
-      font-weight: 150;
-      transition: all 0.3s ease;
-      border: none;
-      font-size: 0.8rem;
-      display: inline-block;
-      box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); /* Ombra per distacco */
-    }
+/* Glassmorphism per il caption */
+.carousel-caption {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  right: 150px;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  display: block !important;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
 
-  }
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
-  .carousel-btn {
-    padding: 12px 24px;
-    background: #dc3545; /* Colore rosso richiesto */
-    color: white;
-    text-decoration: none;
-    border-radius: 20px; /* Più arrotondati */
-    font-weight: 150;
-    transition: all 0.3s ease;
-    border: none;
-    font-size: 1rem;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); /* Ombra per distacco */
-  }
-  
-  .carousel-btn:hover {
-    background: #c82333; /* Rosso più scuro al hover */
-    transform: translateY(-3px); /* Effetto di sollevamento */
-    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Contenitore dei bottoni con più spazio */
-  /* Container dei bottoni */
+.carousel-caption p {
+  font-size: 1rem;
+  margin-bottom: 0;
+  line-height: 1.4;
+  color: #f8f9fa;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Indicatori moderni con glassmorphism */
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 6px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background: rgba(0, 123, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+/* Bottoni con glassmorphism */
+.carousel-btn {
+  padding: 12px 24px;
+  background: rgba(220, 53, 69, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 150;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  display: inline-block;
+  box-shadow: 
+    0 4px 15px rgba(220, 53, 69, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.carousel-btn:hover {
+  background: rgba(200, 35, 51, 0.95);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 20px rgba(220, 53, 69, 0.4),
+    0 0 20px rgba(220, 53, 69, 0.3);
+  color: white;
+  text-decoration: none;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Container dei bottoni */
 .carousel-buttons {
   position: absolute;
   bottom: 15px;
@@ -162,53 +147,142 @@
   right: 15px;
   display: flex;
   gap: 10px;
-  
 }
 
-  /* Se vuoi differenziare i due bottoni */
-  .carousel-btn.btn-1 {
-    background: #dc3545;
-  }
-  
-  .carousel-btn.btn-1:hover {
-    background: #c82333;
-  }
-  
-  .carousel-btn.btn-2 {
-    background: #dc3545;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordo per differenziare */
-  }
-  
-  .carousel-btn.btn-2:hover {
-    background: #c82333;
-    border-color: rgba(255, 255, 255, 0.5);
-  }
+.carousel-btn.btn-1 {
+  background: rgba(220, 53, 69, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
-.card-row{
+.carousel-btn.btn-1:hover {
+  background: rgba(200, 35, 51, 0.95);
+}
+
+.carousel-btn.btn-2 {
+  background: rgba(220, 53, 69, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.carousel-btn.btn-2:hover {
+  background: rgba(200, 35, 51, 0.95);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Cards con glassmorphism */
+.card-row {
   padding: 35px;
-
 }
-.card-text{
-  font-size: 17px;
 
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px 0 rgba(31, 38, 135, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.card-text {
+  font-size: 17px;
   font-family: 'Playfair Display', serif;
   font-weight: 500;
-
 }
-h5{
+
+h5 {
   color: #d53242;
   font-family: 'Playfair Display', serif;
   font-weight: 500;
 }
 
-.text-color{
+.text-color {
   color: black;
 }
 
-
-.foot{
+/* Footer con glassmorphism */
+.foot {
   background: linear-gradient(135deg, #91a2ed 0%, #764ba2 50%, #f093fb 100%);
   padding: 15px;
   text-align: center;
+  position: relative;
+}
+
+.foot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #carouselExampleCaptions {
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
   
+  .carousel-item img {
+    height: 250px;
+  }
+  
+  .carousel-caption {
+    bottom: 80px;
+    left: 15px;
+    right: 10px;
+    padding: 15px;
+    flex-direction: column;
+    display: flex;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.9rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+  
+  .carousel-btn {
+    padding: 8px 12px;
+    background: rgba(220, 53, 69, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 150;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+  }
 }
