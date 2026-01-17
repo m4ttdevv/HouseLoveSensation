@@ -1,21 +1,221 @@
-.foot{
-    background: linear-gradient(135deg, #4f546e 0%, #764ba2 50%, #c463ce 100%);
-    padding: 15px;
-    text-align: center;
-  }
-  .text{
-    color: rgb(0, 0, 0);
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-  }
-  .bi{
-    color: #8c0d1a;
-  }
-  
-.text-privacy{
-  color: #8c0d1a;
+/* === MODERN FOOTER === */
+.modern-footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  position: relative;
+  overflow: hidden;
+  margin-top: 4rem;
+}
 
+.modern-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0 2rem;
+}
+
+/* === FOOTER TITLES === */
+.footer-title {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+}
+
+/* === FOOTER LINKS === */
+.footer-links {
+  margin: 0;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.9);
   font-family: 'Playfair Display', serif;
   font-weight: 500;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
 
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+/* === SOCIAL LINKS === */
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon i {
+  color: #ffffff;
+}
+
+/* Colori specifici per ogni social al hover */
+.social-icon.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: transparent;
+}
+
+.social-icon.youtube:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+/* === DIVIDER === */
+.footer-divider {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 2.5rem 0 1.5rem;
+}
+
+/* === COPYRIGHT === */
+.copyright-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.brand-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.brand-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .footer-content {
+      padding: 2.5rem 0 1.5rem;
+  }
+
+  .footer-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+  }
+
+  .footer-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .social-links {
+      gap: 1rem;
+      margin-top: 1rem;
+  }
+
+  .social-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+  }
+
+  .footer-divider {
+      margin: 2rem 0 1rem;
+  }
+
+  .copyright-text {
+      font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+      padding: 2rem 0 1rem;
+  }
+
+  .footer-title {
+      font-size: 1.1rem;
+  }
+
+  .social-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+  }
 }

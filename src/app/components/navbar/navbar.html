@@ -1,14 +1,12 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+<header class="modern-header">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <!-- Brand con logo integrato -->
-            <a class="navbar-brand d-flex text-dark brand-no-space" href="#">
-            <img src="https://i.ibb.co/K4m3DwC/logonew.jpg" alt="logonew" border="0" class="img-fluid logo" alt="Logo">
-                 </a>
-                 <div class="brand">Hou<span class="Sensation">Sensation</span>Love</div>
-                 
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://i.ibb.co/K4m3DwC/logonew.jpg" alt="logonew" class="brand-logo">
+                <div class="brand-text">Hou<span class="brand-highlight">Sensation</span>Love</div>
+            </a>
               
-
             <!-- Toggle button per menu hamburger -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -16,24 +14,22 @@
            
             <!-- Menu collassabile -->
             <div class="collapse navbar-collapse" id="navbarNav3">
-
                 <!--barra di ricerca-->
-                <div class="search-wrapper mx-auto" style="max-width: 400px;">
+                <div class="search-wrapper mx-auto">
                     <app-search></app-search>
                 </div>
-
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link home-link" routerLink="/home" routerLinkActive="active" aria-current="page" href="home">Home</a>
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active" aria-current="page" href="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link about-link" routerLink="/about" routerLinkActive="active" aria-current="page" href="about">Chi siamo</a>
+                        <a class="nav-link" routerLink="/about" routerLinkActive="active" aria-current="page" href="about">Chi siamo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link service-link" routerLink="/services" routerLinkActive="active" aria-current="page" href="services">Servizi</a>
+                        <a class="nav-link" routerLink="/services" routerLinkActive="active" aria-current="page" href="services">Servizi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link contact-link" routerLink="/contact" routerLinkActive="active" aria-current="page" href="contact">Contatti</a>
+                        <a class="nav-link" routerLink="/contact" routerLinkActive="active" aria-current="page" href="contact">Contatti</a>
                     </li>
                 </ul>
             </div>

@@ -1,116 +1,74 @@
-<!-- HERO SECTION CON CAROUSEL -->
 <section class="hero-section">      
-    <div class="max-w-4xl mx-auto px-4 mt-20 mb-10">
-      <div class="carousel-glass-container">
-        <!-- Immagine Hero -->
-        <div class="relative rounded-3xl overflow-hidden shadow-glass">
-          <img 
-            src="https://i.ibb.co/BVnLpZN8/IMG-20231025-103041-1.jpg" 
-            alt="La festa inizia da qui" 
-            class="w-full h-[300px] md:h-[400px] object-cover brightness-75">
-          
-          <!-- Caption con Glassmorphism -->
-          <div class="absolute bottom-12 left-6 right-6 md:bottom-16 md:left-12 md:right-32 glass-caption rounded-2xl p-5 md:p-6">
-            <h5 class="text-xl md:text-3xl font-medium text-white mb-3 playfair-font drop-shadow-text">
-              La festa inizia da qui!
-            </h5>
-            <p class="text-sm md:text-base text-gray-100 leading-relaxed playfair-font drop-shadow-text-sm">
-              Scopri eventi esclusivi, serate indimenticabili e tutta l'energia che stavi cercando!
-            </p>
-          </div>
-          
-          <!-- Bottoni -->
-          <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-3">
-            <a routerLink="/services" routerLinkActive="active" 
-               class="glass-button px-6 py-3 rounded-full text-white text-sm md:text-base font-light transition-all duration-300 hover:-translate-y-1">
-              I nostri Servizi
-            </a>
-            <a routerLink="/contact" routerLinkActive="active" 
-               class="glass-button-secondary px-6 py-3 rounded-full text-white text-sm md:text-base font-light transition-all duration-300 hover:-translate-y-1">
-              Contattaci
-            </a>
-          </div>
+    <!-- HERO CON IMMAGINE E OVERLAY -->
+    <div class="hero-container">
+      <div class="hero-image-wrapper">
+        <img src="https://i.ibb.co/BVnLpZN8/IMG-20231025-103041-1.jpg" alt="Hero Image" class="hero-image">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">La festa inizia da qui!</h1>
+        <p class="hero-subtitle">Scopri eventi esclusivi, serate indimenticabili e tutta l'energia che stavi cercando!</p>
+        <div class="hero-buttons">
+          <a class="btn-primary-custom" routerLink="/services" routerLinkActive="active">I nostri Servizi</a>
+          <a class="btn-secondary-custom" routerLink="/contact" routerLinkActive="active">Contattaci</a>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- SEZIONE CARDS -->
-  <section class="py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      
+  <!-- SEZIONE EVENTI -->
+  <section class="events-section">
+    <div class="container">
       <!-- Titolo Centrale -->
-      <div class="text-center mb-12 md:mb-16">
-        <h1 class="text-3xl md:text-5xl font-bold text-gray-800 playfair-font">
-          Scopri l'evento che fa per te
-        </h1>
+      <div class="section-header">
+        <h2 class="section-title">Scopri l'evento che fa per te</h2>
+        <div class="title-underline"></div>
       </div>
       
-      <!-- Card 1: Matrimonio - Immagine Sinistra -->
-      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 md:mb-20 px-4 md:px-8">
-        <div class="w-full md:w-1/2">
-          <img 
-            src="https://i.ibb.co/dJzFsdPz/Matrimonio.jpg" 
-            alt="Matrimonio" 
-            class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <!-- Immagini Eventi -->
+      <div class="events-layout">
+        
+        <!-- Immagine 1: Matrimonio - Grande a sinistra -->
+        <div class="event-item event-large">
+          <div class="event-image-wrapper">
+            <img src="https://i.ibb.co/dJzFsdPz/Matrimonio.jpg" alt="Matrimonio" class="event-image">
+            <div class="event-text-overlay">
+              <h3 class="event-title">Il tuo "Sì" perfetto</h3>
+              <p class="event-description">
+                Dalla cerimonia alla festa, creiamo momenti indimenticabili per te e i tuoi ospiti.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="w-full md:w-1/2">
-          <h5 class="text-2xl md:text-3xl font-bold text-[#d53242] mb-4 playfair-font">
-            Il tuo "Sì" perfetto
-          </h5>
-          <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed playfair-font">
-            Dalla cerimonia alla festa, creiamo momenti indimenticabili per te e i tuoi ospiti.
-          </p>
-          <a routerLink="/services" routerLinkActive="active" 
-             class="inline-block glass-button px-6 py-3 rounded-full text-white text-sm md:text-base transition-all duration-300 hover:-translate-y-1">
-            Scopri di più...
-          </a>
+  
+        <div class="event-column-right">
+          <!-- Immagine 2: Party - Piccola in alto a destra -->
+          <div class="event-item event-small">
+            <div class="event-image-wrapper">
+              <img src="https://i.ibb.co/2YC08k62/Party.jpg" alt="Party" class="event-image">
+              <div class="event-text-overlay">
+                <h3 class="event-title">La festa che vuoi</h3>
+                <p class="event-description">
+                  DJ, luci, musica e tanto divertimento: rendiamo speciale ogni tipo di party!
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Immagine 3: Pranzo - Media in basso a destra -->
+          <div class="event-item event-medium">
+            <div class="event-image-wrapper">
+              <img src="https://i.ibb.co/FL0Mq00t/Pranzo.jpg" alt="Pranzo" class="event-image">
+              <div class="event-text-overlay">
+                <h3 class="event-title">Gusto e convivialità</h3>
+                <p class="event-description">
+                  Eventi gastronomici per ogni occasione, con piatti autentici e atmosfere accoglienti.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+  
       </div>
-      
-      <!-- Card 2: Party - Immagine Destra -->
-      <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-12 md:mb-20 px-4 md:px-8">
-        <div class="w-full md:w-1/2">
-          <img 
-            src="https://i.ibb.co/2YC08k62/Party.jpg" 
-            alt="Party" 
-            class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-        </div>
-        <div class="w-full md:w-1/2">
-          <h5 class="text-2xl md:text-3xl font-bold text-[#d53242] mb-4 playfair-font">
-            La festa che vuoi
-          </h5>
-          <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed playfair-font">
-            DJ, luci, musica e tanto divertimento: rendiamo speciale ogni tipo di party!
-          </p>
-          <a routerLink="/services" routerLinkActive="active" 
-             class="inline-block glass-button px-6 py-3 rounded-full text-white text-sm md:text-base transition-all duration-300 hover:-translate-y-1">
-            Scopri di più...
-          </a>
-        </div>
-      </div>
-      
-      <!-- Card 3: Pranzo - Immagine Sinistra -->
-      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 md:mb-20 px-4 md:px-8">
-        <div class="w-full md:w-1/2">
-          <img 
-            src="https://i.ibb.co/FL0Mq00t/Pranzo.jpg" 
-            alt="Pranzo" 
-            class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-        </div>
-        <div class="w-full md:w-1/2">
-          <h5 class="text-2xl md:text-3xl font-bold text-[#d53242] mb-4 playfair-font">
-            Gusto e convivialità
-          </h5>
-          <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed playfair-font">
-            Eventi gastronomici per ogni occasione, con piatti autentici e atmosfere accoglienti.
-          </p>
-          <a routerLink="/services" routerLinkActive="active" 
-             class="inline-block glass-button px-6 py-3 rounded-full text-white text-sm md:text-base transition-all duration-300 hover:-translate-y-1">
-            Scopri di più...
-          </a>
-        </div>
-      </div>
-      
     </div>
   </section>
